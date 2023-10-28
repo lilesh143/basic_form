@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Registered Student Data</h1>
+    <table border="1" width="90%">
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <th>Action</th>
+
+        <% if (stdnt.length > 0){ %>
+            <% for(var i=0; i<stdnt.length; i++){ %>
+                <tr>
+                    <td>
+                        <%- stdnt[i].id %>
+                    </td>
+                    <td>
+                        <%- stdnt[i].name %>
+                    </td>
+                    <td>
+                        <%- stdnt[i].email %>
+                    </td>
+                    <td>
+                        <%- stdnt[i].number %>
+                    </td>
+                    <td>
+                        <a href="/delete-student?id=<%- stdnt[i].id %>">Delete</a>
+                        <a href="/update-student?id=<%- stdnt[i].id -%>">Update</a>
+                    </td>
+                </tr>
+                <% } %>
+                    <% }else{ %>
+                        <h2>No student data found</h2>
+                        <% } %>
+
+    </table>
+    <a href="/">Home</a> <br> <br>
+    <a href="/search-student">Search Student</a>
+    <div id="responce" style="color:red"></div>
+</body>
+
+
+
+</html>

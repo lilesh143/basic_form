@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Update Student</h2>
+    <form action="" method="POST">
+        <input type="hidden" name="id" value="<%- stdnt[0].id %>">
+        <input type="text" name="name" value="<%- stdnt[0].name %>" <br> <br>
+        <input type="email" name="email" value="<%- stdnt[0].email %>"> <br> <br>
+        <input type="number" name="mno" value="<%- stdnt[0].number %>"> <br> <br>
+        <input type="submit" value="update"> <br> <br>
+    </form>
+</body>
+
+</html>

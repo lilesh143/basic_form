@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Search Student Data</h1>
+
+    <form action="/search">
+        <input type="text" name="name" placeholder="Search Name">
+        <input type="email" name="email" placeholder="Search Email">
+        <input type="number" name="number" placeholder="Search Number">
+        <input type="submit" value="search"> <br> <br>
+    </form>
+
+
+    <table border="1" width="90%">
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+        <!-- <th>Action</th> -->
+
+        <% if (stdnt.length > 0){ %>
+            <% for(var i=0; i<stdnt.length; i++){ %>
+                <tr>
+                    <td>
+                        <%- stdnt[i].id %>
+                    </td>
+                    <td>
+                        <%- stdnt[i].name %>
+                    </td>
+                    <td>
+                        <%- stdnt[i].email %>
+                    </td>
+                    <td>
+                        <%- stdnt[i].number %>
+                    </td>
+                    <!-- <td>
+                        <a href="/delete-student?id=<%- stdnt[i].id %>">Delete</a>
+                        <a href="/update-student?id=<%- stdnt[i].id -%>">Update</a>
+                    </td> -->
+                </tr>
+                <% } %>
+                    <% }else{ %>
+                        <tr>
+                            <td>
+                                Data not found
+                            </td>
+                        </tr>
+                        <% } %>
+
+    </table>
+    <a href="/">Home</a>
+    <div id="responce" style="color:red"></div>
+</body>
+
+
+
+</html>
