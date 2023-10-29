@@ -21,7 +21,7 @@ app.post('/', function(req, res) {
     var mno = req.body.mno;
 
 
-    var sql = "insert into student2 (name, email, number) values(?, ?, ?)";
+    var sql = "INSERT INTO student2 (name, email, number) VALUES(?, ?, ?)";
 
     con.query(sql, [name, email, mno], function(error, result) {
         if (error) throw error;
